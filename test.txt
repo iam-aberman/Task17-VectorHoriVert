@@ -1,0 +1,2 @@
+Hori string1.txt 1/2 2/3 3/4
+Vert string2.txt 2/3 7/6 8/5
