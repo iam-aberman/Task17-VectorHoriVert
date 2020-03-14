@@ -30,7 +30,6 @@ namespace VectorHoriVert {
         }
 
         ~HoriFactory() = default;
-
     };
 
 
