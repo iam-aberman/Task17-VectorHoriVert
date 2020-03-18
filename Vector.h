@@ -64,6 +64,14 @@ namespace VectorHoriVert {
         void PushBack(C newElement) {
             elements_.push_back(newElement);
         }
+        
+        typename std::vector<C>::iterator begin() {
+            return elements_.begin();
+        }
+        
+        typename std::vector<C>::iterator end() {
+            return elements_.end();
+        }
 
     protected:
         std::vector<C> elements_;
