@@ -21,11 +21,7 @@ namespace VectorHoriVert {
         }
 
         Vector(const Vector<C>& other) {
-            elements_.resize(other.getSize());
-
-            for (size_t i = 0; i < elements_.size(); ++i) {
-                elements_[i] = other[i];
-            }
+            elements_ = other.getElements();
         }
 
         virtual ~Vector() {}
@@ -49,11 +45,7 @@ namespace VectorHoriVert {
         }
 
         Vector& operator=(const Vector<C>& other) {
-            elements_.resize(other.getSize());
-
-            for (size_t i = 0; i < other.getSize(); ++i) {
-                elements_[i] = other[static_cast<size_t>(i)];
-            }
+            elements_ = other.getElements();
 
             return *this;
         }
