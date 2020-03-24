@@ -5,8 +5,8 @@
 #include "UnitTests.h"
 
 void TestConstructor() {
-    VectorHoriVert::VectorHori<Rational> testHori(3);
-    VectorHoriVert::VectorVert<Rational> testVert(3);
+    VECTOR_HORI_VERT::VectorHori<Rational> testHori(3);
+    VECTOR_HORI_VERT::VectorVert<Rational> testVert(3);
 
     AssertEqual(testHori.getSize(), 3);
     AssertEqual(testVert.getSize(), 3);
@@ -22,7 +22,7 @@ void TestConstructor() {
 }
 
 void TestIndexOperator() {
-    VectorHoriVert::VectorHori<Rational> test(3);
+    VECTOR_HORI_VERT::VectorHori<Rational> test(3);
 
     for (int i = 0; i < 3; ++i) {
         test[i] = Rational(i + 1, i + 2); // (1/2, 2/3, 3/4)
@@ -38,14 +38,14 @@ void TestIndexOperator() {
 }
 
 void TestAddition() {
-    VectorHoriVert::VectorVert<Rational> lhs(3), rhs(3);
+    VECTOR_HORI_VERT::VectorVert<Rational> lhs(3), rhs(3);
 
     for (int i = 0; i < 3; ++i) {
         lhs[i] = Rational(i + 1, i + 2); // (1/2, 2/3, 3/4)
         rhs[i] = Rational(i + 2, i + 3); // (2/3, 3/4, 4/5)
     }
 
-    VectorHoriVert::VectorVert<Rational> result = lhs + rhs;
+    VECTOR_HORI_VERT::VectorVert<Rational> result = lhs + rhs;
 
     std::vector<Rational> expected = {
             Rational(7, 6),
@@ -57,14 +57,14 @@ void TestAddition() {
 }
 
 void TestSubtraction() {
-    VectorHoriVert::VectorHori<Rational> lhs(3), rhs(3);
+    VECTOR_HORI_VERT::VectorHori<Rational> lhs(3), rhs(3);
 
     for (int i = 0; i < 3; ++i) {
         lhs[i] = Rational(i + 2, i + 3); // (2/3, 3/4, 4/5)
         rhs[i] = Rational(i + 1, i + 2); // (1/2, 2/3, 3/4)
     }
 
-    VectorHoriVert::VectorHori<Rational> result = lhs - rhs;
+    VECTOR_HORI_VERT::VectorHori<Rational> result = lhs - rhs;
 
     std::vector<Rational> expected = {
             Rational(1, 6),
@@ -76,14 +76,14 @@ void TestSubtraction() {
 }
 
 void TestMultiplication() {
-    VectorHoriVert::VectorHori<Rational> lhs(3), rhs(3);
+    VECTOR_HORI_VERT::VectorHori<Rational> lhs(3), rhs(3);
 
     for (int i = 0; i < 3; ++i) {
         lhs[i] = Rational(i + 2, i + 3); // (2/3, 3/4, 4/5)
         rhs[i] = Rational(i + 1, i + 2); // (1/2, 2/3, 3/4)
     }
 
-    VectorHoriVert::VectorVert<Rational> result = lhs * rhs;
+    VECTOR_HORI_VERT::VectorVert<Rational> result = lhs * rhs;
 
     std::vector<Rational> expected = {
             Rational(1, 3),
@@ -95,7 +95,7 @@ void TestMultiplication() {
 }
 
 void TestVerticalPrint() {
-    VectorHoriVert::VectorVert<Rational> test(3);
+    VECTOR_HORI_VERT::VectorVert<Rational> test(3);
 
     for (int i = 0; i < 3; ++i) {
         test[i] = Rational(i + 1, i + 2); // (1/2, 2/3, 3/4)
@@ -110,7 +110,7 @@ void TestVerticalPrint() {
 }
 
 void TestHorizontalPrint() {
-    VectorHoriVert::VectorHori<Rational> test(3);
+    VECTOR_HORI_VERT::VectorHori<Rational> test(3);
 
     for (int i = 0; i < 3; ++i) {
         test[i] = Rational(i + 1, i + 2); // (1/2, 2/3, 3/4)
@@ -125,9 +125,9 @@ void TestHorizontalPrint() {
 }
 
 void TestVerticalFactory() {
-    VectorHoriVert::VertFactory<Rational> factory;
+    VECTOR_HORI_VERT::VertFactory<Rational> factory;
 
-    std::shared_ptr<VectorHoriVert::Vector<Rational>> ptr;
+    std::shared_ptr<VECTOR_HORI_VERT::Vector<Rational>> ptr;
     ptr = factory.Create(3);
 
     for (int i = 0; i < 3; ++i) {
@@ -143,9 +143,9 @@ void TestVerticalFactory() {
 }
 
 void TestHorizontalFactory() {
-    VectorHoriVert::HoriFactory<Rational> factory;
+    VECTOR_HORI_VERT::HoriFactory<Rational> factory;
 
-    std::shared_ptr<VectorHoriVert::Vector<Rational>> ptr;
+    std::shared_ptr<VECTOR_HORI_VERT::Vector<Rational>> ptr;
     ptr = factory.Create(3);
 
     for (int i = 0; i < 3; ++i) {
