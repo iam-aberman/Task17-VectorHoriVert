@@ -88,7 +88,7 @@ public:
             function();
 
             std::cerr << "Test " << testName << " passed" << std::endl;
-        } catch (std::exception& e) {
+        } catch (const std::exception& e) {
             ++nFails;
             std::cerr << "Test " << testName << " failed" << std::endl;
         }
