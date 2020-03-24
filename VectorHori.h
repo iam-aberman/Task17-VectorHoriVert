@@ -7,7 +7,7 @@
 
 #include "Vector.h"
 
-namespace VectorHoriVert {
+namespace VECTOR_HORI_VERT {
     // derived class : horizontal "print" function
 
     template <class C>
