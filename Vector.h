@@ -64,6 +64,14 @@ namespace VECTOR_HORI_VERT {
         typename std::vector<C>::iterator end() {
             return elements_.end();
         }
+        
+        typename std::vector<C>::const_iterator begin() const {
+            return elements_.begin();
+        }
+
+        typename std::vector<C>::const_iterator end() const {
+            return elements_.end();
+        }
 
     protected:
         std::vector<C> elements_;
