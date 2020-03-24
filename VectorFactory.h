@@ -11,7 +11,7 @@
 #include "VectorHori.h"
 #include "VectorVert.h"
 
-namespace VectorHoriVert {
+namespace VECTOR_HORI_VERT {
 
     // abstract vector factory
     template <class C>
