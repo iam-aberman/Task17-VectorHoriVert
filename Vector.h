@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 
-namespace VectorHoriVert {
+namespace VECTOR_HORI_VERT {
     // abstract vector class
     template <class C>
     class Vector {
