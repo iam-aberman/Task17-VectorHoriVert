@@ -53,6 +53,7 @@ namespace VECTOR_HORI_VERT {
 
         VectorHori<T> result = VectorHori<T>(lhs.getSize());
 
+        #pragma omp parallel for
         for (size_t i = 0; i < result.getSize(); ++i) {
             result[i] = lhs[i] + rhs[i];
         }
@@ -68,6 +69,7 @@ namespace VECTOR_HORI_VERT {
 
         VectorHori<T> result = VectorHori<T>(lhs.getSize());
 
+        #pragma omp parallel for
         for (size_t i = 0; i < result.getSize(); ++i) {
             result[i] = lhs[i] - rhs[i];
         }
@@ -83,6 +85,7 @@ namespace VECTOR_HORI_VERT {
 
         VectorHori<T> result = VectorHori<T>(lhs.getSize());
 
+        #pragma omp parallel for
         for (size_t i = 0; i < result.getSize(); ++i) {
             result[i] = lhs[i] * rhs[i];
         }
