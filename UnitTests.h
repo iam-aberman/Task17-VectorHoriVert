@@ -13,6 +13,7 @@
 
 #include "VectorFactory.h"
 #include "TestRunner.h"
+#include "Profile.h"
 #include "Rational.h"
 
 void TestConstructor();
@@ -27,6 +28,8 @@ void TestHorizontalPrint();
 
 void TestVerticalFactory();
 void TestHorizontalFactory();
+
+void CompareSpeed();
 
 void TestAll();
 
