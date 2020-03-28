@@ -53,10 +53,13 @@ namespace VECTOR_HORI_VERT {
             throw std::invalid_argument("Different sizes");
         }
 
+        omp_set_num_threads(4);
+        
         VectorHori<T> result = VectorHori<T>(lhs.getSize());
 
-        #pragma omp parallel for
-        for (size_t i = 0; i < result.getSize(); ++i) {
+        size_t i = 0;
+        #pragma omp parallel for shared(lhs, rhs, result) private(i)
+        for (i = 0; i < result.getSize(); ++i) {
             result[i] = lhs[i] + rhs[i];
         }
 
@@ -68,10 +71,13 @@ namespace VECTOR_HORI_VERT {
         if (lhs.getSize() != rhs.getSize()) {
             throw std::invalid_argument("Different sizes");
         }
+        
+        omp_set_num_threads(4);
 
         VectorHori<T> result = VectorHori<T>(lhs.getSize());
 
-        #pragma omp parallel for
+        size_t i = 0;
+        #pragma omp parallel for shared(lhs, rhs, result) private(i)
         for (size_t i = 0; i < result.getSize(); ++i) {
             result[i] = lhs[i] - rhs[i];
         }
@@ -85,10 +91,13 @@ namespace VECTOR_HORI_VERT {
             throw std::invalid_argument("Different sizes");
         }
 
+        omp_set_num_threads(4);
+        
         VectorHori<T> result = VectorHori<T>(lhs.getSize());
 
-        #pragma omp parallel for
-        for (size_t i = 0; i < result.getSize(); ++i) {
+        size_t i = 0;
+        #pragma omp parallel for shared(lhs, rhs, result) private(i)
+        for (i = 0; i < result.getSize(); ++i) {
             result[i] = lhs[i] * rhs[i];
         }
 
