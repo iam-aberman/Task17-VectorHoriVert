@@ -17,8 +17,11 @@ using HoriFactory = VECTOR_HORI_VERT::HoriFactory<Rational>;
 using VertFactory = VECTOR_HORI_VERT::VertFactory<Rational>;
 
 int main() {
-    // unit-tests
+    // Unit-tests
     TestAll();
+    
+    // OpenMP test
+    CompareSpeed();
 
     try {
         // Task
