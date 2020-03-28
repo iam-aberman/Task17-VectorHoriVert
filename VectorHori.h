@@ -5,6 +5,8 @@
 #ifndef VECTORHORIVERT_VECTORHORI_H
 #define VECTORHORIVERT_VECTORHORI_H
 
+#include <omp.h>
+
 #include "Vector.h"
 
 namespace VECTOR_HORI_VERT {
