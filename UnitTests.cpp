@@ -161,7 +161,7 @@ void TestHorizontalFactory() {
 }
 
 void CompareSpeed() {
-    std::cout << "\n\nSpeed comparison\n";
+    std::cout << "\nSpeed comparison\n";
     
     const size_t SIZE = 10'000'000;
     std::cout << "Size = " << SIZE << '\n';
