@@ -9,4 +9,8 @@ add_executable(VectorHoriVert
         Vector.h
         VectorHori.h
         VectorVert.h
-        VectorFactory.h Rational.cpp Rational.h UnitTests.cpp UnitTests.h TestRunner.cpp TestRunner.h)
+        VectorFactory.h 
+        Rational.cpp Rational.h 
+        UnitTests.cpp UnitTests.h 
+        TestRunner.cpp TestRunner.h
+        Profile.h Profile.cpp)
