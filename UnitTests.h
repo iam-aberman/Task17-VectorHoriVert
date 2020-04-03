@@ -29,8 +29,6 @@ void TestHorizontalPrint();
 void TestVerticalFactory();
 void TestHorizontalFactory();
 
-void CompareSpeed();
-
 void TestAll();
 
 
