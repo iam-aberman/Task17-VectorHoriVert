@@ -19,10 +19,7 @@ using VertFactory = VECTOR_HORI_VERT::VertFactory<Rational>;
 int main() {
     // Unit-tests
     TestAll();
-    
-    // OpenMP test
-    CompareSpeed();
-
+ 
     try {
         // Task
         string filename = "test.txt";
