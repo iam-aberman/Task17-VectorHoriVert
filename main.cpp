@@ -37,7 +37,7 @@ int main() {
         vector<string> filenames_;
 
         // factories
-        map<string, shared_ptr<Factory>> factories_ = {
+        const map<string, shared_ptr<Factory>> factories_ = {
                 {"Hori", make_shared<HoriFactory>()},
                 {"Vert", make_shared<VertFactory>()}
         };
@@ -54,7 +54,7 @@ int main() {
                 return -1;
             }
 
-            auto resFactory = factories_[type];
+            auto resFactory = factories_.at(type);
             auto newVector = resFactory->Create(0u);
 
             Rational tmpRational;
