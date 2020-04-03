@@ -160,61 +160,6 @@ void TestHorizontalFactory() {
     AssertEqual(output.str(), expected);
 }
 
-void CompareSpeed() {
-    std::cout << "\nSpeed comparison\n";
-    
-    const size_t SIZE = 10'000'000;
-    std::cout << "Size = " << SIZE << '\n';
-    
-    VECTOR_HORI_VERT::VectorHori<Rational> left(SIZE), right(SIZE);
-    for (size_t i = 0; i < SIZE; ++i) {
-        left[i]     = Rational(1, 3);
-        right[i]    = Rational(1, 3);
-    }
-    
-    {
-        LOG_DURATION("Addition without OpenMP");
-        
-        VECTOR_HORI_VERT::VectorHori<Rational> res(SIZE);
-        for (size_t i = 0; i < SIZE; ++i) {
-            res[i] = left[i] + right[i];
-        }
-    }
-    {
-        LOG_DURATION("Addition with OpenMP");
-        
-        VECTOR_HORI_VERT::VectorHori<Rational> res = left + right;
-    }
-    std::cout << '\n';
-    {
-        LOG_DURATION("Subtraction without OpenMP");
-        
-        VECTOR_HORI_VERT::VectorHori<Rational> res(SIZE);
-        for (size_t i = 0; i < SIZE; ++i) {
-            res[i] = left[i] - right[i];
-        }
-    }
-    {
-        LOG_DURATION("Subtraction with OpenMP");
-        
-        VECTOR_HORI_VERT::VectorHori<Rational> res = left - right;
-    }
-    std::cout << '\n';
-    {
-        LOG_DURATION("Multiplication without OpenMP");
-        
-        VECTOR_HORI_VERT::VectorHori<Rational> res(SIZE);
-        for (size_t i = 0; i < SIZE; ++i) {
-            res[i] = left[i] * right[i];
-        }
-    }
-    {
-        LOG_DURATION("Multiplication with OpenMP");
-        
-        VECTOR_HORI_VERT::VectorHori<Rational> res = left * right;
-    }
-}
-
 void TestAll() {
     TestRunner testRunner;
 
