@@ -13,7 +13,6 @@
 
 #include "VectorFactory.h"
 #include "TestRunner.h"
-#include "Profile.h"
 #include "Rational.h"
 
 void TestConstructor();
