@@ -61,7 +61,7 @@ namespace VECTOR_HORI_VERT {
 
         size_t i = 0;
         
-        #pragma omp parallel for shared(lhs, rhs, result) shared(i)
+        #pragma omp parallel for shared(lhs, rhs, result) private(i)
         for (i = 0; i < result.size(); ++i) {
             result[i] = lhs[i] + rhs[i];
         }
@@ -79,7 +79,7 @@ namespace VECTOR_HORI_VERT {
 
         size_t i = 0;
         
-        #pragma omp parallel for shared(lhs, rhs, result) shared(i)
+        #pragma omp parallel for shared(lhs, rhs, result) private(i)
         for (i = 0; i < result.size(); ++i) {
             result[i] = lhs[i] - rhs[i];
         }
@@ -97,7 +97,7 @@ namespace VECTOR_HORI_VERT {
 
         size_t i = 0;
         
-        #pragma omp parallel for shared(lhs, rhs, result) shared(i)
+        #pragma omp parallel for shared(lhs, rhs, result) private(i)
         for (i = 0; i < result.size(); ++i) {
             result[i] = lhs[i] * rhs[i];
         }
