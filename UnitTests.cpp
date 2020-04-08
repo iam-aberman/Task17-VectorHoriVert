@@ -8,8 +8,8 @@ void TestConstructor() {
     VECTOR_HORI_VERT::VectorHori<Rational> testHori(3);
     VECTOR_HORI_VERT::VectorVert<Rational> testVert(3);
 
-    AssertEqual(testHori.getSize(), 3);
-    AssertEqual(testVert.getSize(), 3);
+    AssertEqual(testHori.size(), 3);
+    AssertEqual(testVert.size(), 3);
 
     std::vector<Rational> expected = {
             Rational(),
