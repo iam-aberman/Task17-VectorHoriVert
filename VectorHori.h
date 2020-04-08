@@ -5,6 +5,8 @@
 #ifndef VECTORHORIVERT_VECTORHORI_H
 #define VECTORHORIVERT_VECTORHORI_H
 
+#include <omp.h>
+
 #include "Vector.h"
 
 namespace VECTOR_HORI_VERT {
@@ -54,11 +56,14 @@ namespace VECTOR_HORI_VERT {
         if (lhs.size() != rhs.size()) {
             throw std::invalid_argument("Different sizes");
         }
-
+        
         VectorHori<C> result = VectorHori<C>(lhs.size());
 
         size_t i = 0;
-
+        
+        omp_set_num_threads(4);
+        
+        #pragma omp parallel for shared(lhs, rhs, result) shared(i)
         for (i = 0; i < result.size(); ++i) {
             result[i] = lhs[i] + rhs[i];
         }
@@ -75,6 +80,10 @@ namespace VECTOR_HORI_VERT {
         VectorHori<C> result = VectorHori<C>(lhs.size());
 
         size_t i = 0;
+        
+        omp_set_num_threads(4);
+        
+        #pragma omp parallel for shared(lhs, rhs, result) shared(i)
         for (i = 0; i < result.size(); ++i) {
             result[i] = lhs[i] - rhs[i];
         }
@@ -91,6 +100,10 @@ namespace VECTOR_HORI_VERT {
         VectorHori<C> result = VectorHori<C>(lhs.size());
 
         size_t i = 0;
+        
+        omp_set_num_threads(4);
+        
+        #pragma omp parallel for shared(lhs, rhs, result) shared(i)
         for (i = 0; i < result.size(); ++i) {
             result[i] = lhs[i] * rhs[i];
         }
